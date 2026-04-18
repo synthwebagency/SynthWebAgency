@@ -7,7 +7,7 @@ const services = [
     icon: <Layout className="w-10 h-10" />,
     title: 'Design & Development',
     description: 'Full custom website creation using modern frameworks and high-end design principles. Focus on performance and responsiveness.',
-    features: ['Custom UI/UX Design', 'Modern Frameworks', 'Responsive Layouts', 'SEO Optimization'],
+    features: ['Custom UI/UX Design', 'Modern Frameworks', 'Responsive Layouts'],
   },
   {
     icon: <Zap className="w-10 h-10" />,

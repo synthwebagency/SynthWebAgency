@@ -29,6 +29,10 @@ const faqs = [
     question: 'Do you provide domain and hosting services?',
     answer: 'Yes, we handle the complete process of launching your website, including hosting configuration and domain connection. Domains range from R200–R1000+ per year.',
   },
+  {
+    question: 'How do we make payments?',
+    answer: 'We accept payments via Stripe, Paypal, or sending money directly to a Capitec Bank account.',
+  },
 ];
 
 export default function FAQ() {

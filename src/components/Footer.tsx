@@ -9,6 +9,7 @@ const footerLinks = [
       { name: 'Who We Are', path: '/who-we-are' },
       { name: 'Services', path: '/services' },
       { name: 'Portfolio', path: '/portfolio' },
+      { name: 'Blogs', path: '/blogs' },
       { name: 'Contact Us', path: '/contact' },
     ],
   },
@@ -95,7 +96,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3 text-white/50">
               <MapPin size={18} className="text-white/30" />
-              <span>South Africa & Mozambique</span>
+              <span>Mozambique</span>
             </li>
           </ul>
         </div>

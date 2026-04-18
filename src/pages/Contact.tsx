@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: <MapPin className="w-6 h-6" />,
     title: 'Location',
-    value: 'South Africa & Mozambique',
+    value: 'Mozambique',
     link: '#',
   },
   {

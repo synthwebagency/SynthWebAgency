@@ -3,24 +3,38 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, AlertCircle, ArrowRight, DollarSign, Globe, ShieldCheck } from 'lucide-react';
 
 const subscriptionFeatures = [
-  'Custom animated backgrounds',
-  'Custom cursors',
-  'Custom images and text design',
-  'Monthly website report sheet',
-  'Ongoing maintenance and support',
-  'Website remains live and accessible',
-  'Seasonal updates',
-  'SEO optimization',
-  'Surveys and quizzes',
-  'Discount tags',
-  'Integrated videos',
-  'Google Maps',
-  'Social media integration',
-  'Testimonials slider',
-  'Dark/light mode',
-  'Blog integration and setup',
-  'Gemini chatbot integration',
-  '2 languages to add to the website',
+  { text: 'Custom cursors' },
+  { text: 'Custom images and text design' },
+  { text: 'Monthly website report sheet' },
+  { text: 'Ongoing maintenance and support' },
+  { text: 'Website remains live and accessible' },
+  { text: 'Seasonal updates' },
+  { text: 'Surveys and quizzes' },
+  { text: 'Discount tags' },
+  { text: 'Integrated videos' },
+  { text: 'Google Maps' },
+  { text: 'Social media integration' },
+  { text: 'Testimonials slider' },
+  { text: 'Dark/light mode' },
+  { text: 'Blog integration and setup' },
+  { text: 'Gemini chatbot integration' },
+  { text: '2 languages to add to the website' },
+  { 
+    text: 'Booking systems feature - ( Requires a google account with google calendar) This is a feature too add too your site if you require bookings.',
+    isNew: true 
+  },
+  { 
+    text: (
+      <>
+        3D objects or animated backgrounds- Take a look through <a href="https://spline.design/" target="_blank" rel="noopener noreferrer" className="font-bold underline text-white">Spline</a> animations and let us know which one youd like us too integrate
+      </>
+    ),
+    isNew: true 
+  },
+  { 
+    text: 'Custom videos ( Or videos we can find for you!)',
+    isNew: true 
+  },
 ];
 
 export default function Pricing() {
@@ -62,20 +76,29 @@ export default function Pricing() {
             </div>
             <div className="flex flex-col gap-4">
               <h3 className="text-3xl font-display font-bold uppercase tracking-widest">Subscription Plan</h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-display font-extrabold tracking-tighter">R400</span>
-                <span className="text-white/50 text-xl">/ month</span>
+              <div className="flex flex-col gap-1">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-5xl font-display font-extrabold tracking-tighter">R400</span>
+                  <span className="text-white/50 text-xl">/ month</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-display font-bold text-white/80">$25</span>
+                  <span className="text-white/40 text-sm">/ month USD</span>
+                </div>
+                <p className="text-white/30 text-xs mt-1">(1500 MZN / month)</p>
               </div>
-              <p className="text-white/50 text-sm">(1500 MZN / month)</p>
             </div>
             <div className="h-px bg-white/10 w-full" />
             <div className="flex flex-col gap-6">
               <h4 className="font-bold text-lg">What's Included:</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {subscriptionFeatures.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-white/70 text-sm">
-                    <CheckCircle2 size={16} className="text-white/50 flex-shrink-0" />
-                    {feature}
+              <ul className="grid grid-cols-1 gap-4">
+                {subscriptionFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+                    <CheckCircle2 size={16} className="text-white/50 flex-shrink-0 mt-0.5" />
+                    <span className="flex-1">
+                      {feature.isNew && <strong className="text-white mr-2">NEW!</strong>}
+                      {feature.text}
+                    </span>
                   </li>
                 ))}
               </ul>

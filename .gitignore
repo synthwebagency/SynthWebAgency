@@ -7,6 +7,10 @@ coverage/
 .env*
 !.env.example
 
-# Exclude images in public/images but keep the folder
-public/images/*
-!public/images/.gitkeep
+# Exclude images in public but keep the folder structure
+public/*.png
+public/*.jpg
+public/*.jpeg
+public/*.svg
+public/*.gif
+!public/.gitkeep

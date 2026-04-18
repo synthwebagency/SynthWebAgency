@@ -10,6 +10,9 @@ const navLinks = [
   { name: 'Services', path: '/services' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Pricing', path: '/pricing' },
+  { name: 'Blogs', path: '/blogs' },
+  { name: 'Testimonials', path: '/testimonials' },
+  { name: 'FAQ', path: '/faq' },
   { name: 'Contact Us', path: '/contact' },
 ];
 
@@ -40,7 +43,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 overflow-hidden">
-            <img src="/images/logo.jpg" alt="Synth Web Logo" className="w-full h-full object-cover scale-125" referrerPolicy="no-referrer" />
+            <img src="/logo.jpg" alt="Synth Web Logo" className="w-full h-full object-cover scale-125" referrerPolicy="no-referrer" />
           </div>
           <span className="text-2xl font-display font-bold tracking-tighter">
             SYNTH<span className="text-white/50">WEB</span>
@@ -66,14 +69,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4">
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}

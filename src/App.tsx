@@ -12,10 +12,13 @@ import Terms from './pages/Terms';
 import SLA from './pages/SLA';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
+import Blogs from './pages/Blogs';
+import CinematicIntro from './components/CinematicIntro';
 
 export default function App() {
   return (
     <Router>
+      <CinematicIntro />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -23,6 +26,7 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="pricing" element={<Pricing />} />
+          <Route path="blogs" element={<Blogs />} />
           <Route path="how-it-works" element={<HowItWorks />} />
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="faq" element={<FAQ />} />

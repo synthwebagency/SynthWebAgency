@@ -76,7 +76,7 @@ export default function WhoWeAre() {
                 In today's digital age, your website is often the first point of contact between you and your potential customers. For small businesses, having a professional and classy online presence is no longer a luxury—it's a necessity.
               </p>
               <p>
-                Synth Web was founded by Gabriella Stroh with a clear mission: to provide small businesses in South Africa and Mozambique with high-end web design services that are both efficient and affordable.
+                Synth Web was founded by Gabriella Stroh with a clear mission: to provide small businesses in Mozambique, South Africa, Malawi, and Zimbabwe with high-end web design services. She continues to build websites for businesses throughout Africa that are both efficient and affordable.
               </p>
               <p>
                 We position ourselves as modern, efficient, and reliable partners in your digital journey. Our focus is on helping you stand out in a crowded marketplace with a website that is as functional as it is beautiful.
@@ -98,7 +98,7 @@ export default function WhoWeAre() {
             className="relative aspect-square glass rounded-[3rem] overflow-hidden group"
           >
             <img
-              src="/images/who-we-are.jpg"
+              src="/who-we-are.png"
               alt="Our Vision"
               className="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
               referrerPolicy="no-referrer"

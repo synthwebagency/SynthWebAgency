@@ -10,12 +10,12 @@ const projects = [
     title: 'Gymo-Academia (Portuguese)',
     category: 'Sports Academy',
     description: 'A high end, minimal platform for a sports academy.',
-    image: '/images/portfolio-gymo.png',
+    image: '/portfolio-1.png',
     link: 'https://gymo-academia.vercel.app/',
     details: [
       'Custom design and development',
       'Interactive Layout',
-      'Time taken to make: 7 hours'
+      'Time taken to make: 3 hours'
     ]
   },
   {
@@ -23,12 +23,12 @@ const projects = [
     title: 'Moz-Artez (English)',
     category: 'Art Portfolio',
     description: 'An artistic website built to show off incredible hand made art.',
-    image: '/images/portfolio-moz.png',
+    image: '/portfolio-2.png',
     link: 'https://moz-artez.vercel.app/',
     details: [
       'Custom design and development',
       'Animated Slideshows',
-      'Time taken to make: 15 hours'
+      'Time taken to make: 4 hours'
     ]
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     title: 'Agri Plantagem (Portuguese)',
     category: 'Landscaping',
     description: 'A landscaping business offering their services on the Web.',
-    image: '/images/portfolio-agri.png',
+    image: '/portfolio-3.png',
     link: 'https://agri-plantagem.vercel.app/',
     details: [
       'Google maps Integration',
@@ -50,7 +50,7 @@ const projects = [
     title: 'The Nail Spa (Portuguese)',
     category: 'Beauty & Wellness',
     description: 'A sleek, gorgeous website for a premium nail salon.',
-    image: '/images/portfolio-nail.png',
+    image: '/portfolio-4.png',
     link: 'https://nail-spa-phi.vercel.app/',
     details: [
       'Custom design',
@@ -64,7 +64,7 @@ const projects = [
     title: 'PSA Multiservice (Portuguese)',
     category: 'Services',
     description: 'A professional multi-service platform.',
-    image: '/images/portfolio-5.png',
+    image: '/portfolio-5.png',
     link: 'https://psa-multiservice.vercel.app/',
     details: [
       'Responsive Layout',
@@ -77,12 +77,77 @@ const projects = [
     title: 'Blush and Bloom Nail Studio (English)',
     category: 'Beauty',
     description: 'A creative and elegant nail studio website.',
-    image: '/images/portfolio-6.png',
+    image: '/portfolio-6.png',
     link: 'https://blush-and-bloom-nail-studio.vercel.app/',
     details: [
       'Custom brand colours',
       'Creative Essay about Self',
       'Time taken to make: 30 minutes'
+    ]
+  },
+  {
+    id: 7,
+    title: 'Verdant Arch (English)',
+    category: 'Architecture',
+    description: 'A sophisticated real estate and architecture platform for luxury listings.',
+    image: '/portfolio-7.png',
+    link: 'https://verdant-arch.vercel.app/',
+    details: [
+      'Custom UI/UX',
+      'Custom bookings',
+      'Time taken to make: 7 hours'
+    ]
+  },
+  {
+    id: 8,
+    title: 'Tap Out (English)',
+    category: 'Fitness',
+    description: 'A high-performance MMA gym website with integrated video.',
+    image: '/portfolio-8.png',
+    link: 'https://tap-out-inky.vercel.app/',
+    details: [
+      'Integrated video',
+      'Scroll animations',
+      'Time taken to make: 8 hours'
+    ]
+  },
+  {
+    id: 9,
+    title: 'All Smiles (English)',
+    category: 'Healthcare',
+    description: 'A professional and welcoming dental practice website with AI integration.',
+    image: '/portfolio-9.png',
+    link: 'https://all-smiles.vercel.app/',
+    details: [
+      'Integrated video',
+      'Integrated Gemini chatbot',
+      'Time taken to make: 3 hours'
+    ]
+  },
+  {
+    id: 10,
+    title: 'Buckys Burgs (English)',
+    category: 'Restaurant',
+    description: 'A mouth-watering burger shop experience with 4K visuals.',
+    image: '/portfolio-10.png',
+    link: 'https://buckys-burgs.vercel.app/',
+    details: [
+      'High quality 4K no background images',
+      'Delivery links',
+      'Time taken to make: 1 hour'
+    ]
+  },
+  {
+    id: 11,
+    title: 'Moz TangSooDo (Portuguese)',
+    category: 'Fitness',
+    description: 'A traditional martial arts and fitness platform.',
+    image: '/portfolio-11.png',
+    link: 'https://moz-tangsoodo.vercel.app/',
+    details: [
+      'Google maps integration',
+      'Custom designs during development',
+      'Time taken to make: 5 hours'
     ]
   },
 ];

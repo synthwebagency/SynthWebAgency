@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Zap, Layout, Settings, Star, Quote } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
+import Spline from '@splinetool/react-spline';
 
 const services = [
   {
@@ -31,42 +32,60 @@ const testimonials = [
   {
     name: 'Michael Chen',
     role: 'Tech Startup Founder',
-    text: 'Fast delivery and exceptional quality. Gabriella and her team are truly experts in their field.',
+    text: 'Gabriella was fast with her work and delivered the site in 24 hours!',
     rating: 5,
   },
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const initTranslate = () => {
+      // @ts-ignore
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        // @ts-ignore
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,pt',
+          // @ts-ignore
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    };
+
+    // If already loaded
+    initTranslate();
+
+    // In case script loads later
+    window.addEventListener('load', initTranslate);
+    return () => window.removeEventListener('load', initTranslate);
+  }, []);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000" />
+      <section className="relative min-h-[100svh] flex items-end justify-center pb-12 overflow-hidden">
+        {/* Interactive 3D Background */}
+        <div className="absolute inset-0 z-0 bg-navy">
+          <div className="absolute inset-0 bg-navy/20 z-10 pointer-events-none" />
+          <Spline 
+            className="w-full h-full"
+            scene="https://prod.spline.design/NaxbxvWCDgZKMinx/scene.splinecode" 
+          />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 z-10 text-center">
+        <div className="max-w-7xl mx-auto px-6 z-20 text-center w-full">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col items-center gap-8"
           >
-            <span className="px-4 py-1 glass rounded-full text-sm font-medium tracking-widest uppercase text-white/70">
-              Modern Web Design Agency
-            </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tighter leading-tight max-w-5xl">
-              TURNING <span className="text-white/50">PIXELS</span> INTO PROFITS ONE CLICK AT A TIME.
-            </h1>
-            <p className="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed">
-              Don’t settle for ordinary websites anymore, work with Synth Web. Where we transform your vision into a stunning reality.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Link to="/contact" className="btn-primary flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+              <Link to="/contact" className="btn-primary flex items-center gap-3">
                 Get Started <ArrowRight size={20} />
               </Link>
+              <div id="google_translate_element" className="translate-widget-home"></div>
               <Link to="/pricing" className="btn-secondary">
                 View Pricing
               </Link>
@@ -84,15 +103,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
+            <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight uppercase tracking-tighter">
               ELEVATE YOUR <br /> BRAND ONLINE
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
-              At Synth Web, we believe that a website is more than just a digital address. It's the face of your business, a powerful tool for growth, and a reflection of your commitment to quality.
-            </p>
-            <p className="text-white/60 text-lg leading-relaxed">
-              Based in South Africa and Mozambique, we specialize in creating premium digital experiences that are fast, responsive, and tailored to your unique needs.
-            </p>
+            <div className="flex flex-col gap-6">
+              <p className="text-white/60 text-lg leading-relaxed">
+                Don’t settle for ordinary websites anymore, work with Synth Web. We believe that a website is more than just a digital address. It's the face and future of your business, a powerful tool for growth, and a reflection of your commitment to quality.
+              </p>
+              <p className="text-white/60 text-lg leading-relaxed">
+                Based in Mozambique and other African countries like: Malawi , Zimbabwe and South Africa. We specialize in creating premium digital experiences that are fast, responsive, and tailored to your unique needs.
+              </p>
+            </div>
             <Link to="/who-we-are" className="text-white font-bold flex items-center gap-2 hover:gap-4 transition-all duration-300">
               Learn more about us <ArrowRight size={20} />
             </Link>
@@ -104,7 +125,7 @@ export default function Home() {
             className="relative aspect-video glass rounded-3xl overflow-hidden group"
           >
             <img
-              src="/images/home-hero.jpg"
+              src="/home-hero.jpg"
               alt="Synth Web Office"
               className="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
               referrerPolicy="no-referrer"
@@ -114,6 +135,46 @@ export default function Home() {
                 <Globe className="text-navy w-10 h-10" />
               </div>
             </div>
+          </motion.div>
+        </div>
+
+        {/* Logo Carousel */}
+        <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex gap-12 sm:gap-24 whitespace-nowrap"
+          >
+            <motion.div
+              animate={{ x: [0, -1000] }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="flex gap-12 sm:gap-24 items-center"
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <img 
+                  key={i} 
+                  src={`/logo-${i}.png`} 
+                  alt={`Partner Logo ${i}`} 
+                  className="h-8 md:h-12 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              ))}
+              {/* Duplicate for infinite loop */}
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <img 
+                  key={`dup-${i}`} 
+                  src={`/logo-${i}.png`} 
+                  alt={`Partner Logo ${i}`} 
+                  className="h-8 md:h-12 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>

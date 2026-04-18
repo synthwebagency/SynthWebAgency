@@ -18,7 +18,7 @@ const testimonials = [
     id: 2,
     name: 'Michael Chen',
     role: 'Tech Startup Founder',
-    text: 'Fast delivery and exceptional quality. Gabriella and her team are truly experts in their field. They understood our requirements perfectly and delivered a website that exceeded our expectations.',
+    text: 'Gabriella was fast with her work and delivered the site in 24 hours!',
     rating: 5,
     image: 'https://i.pravatar.cc/150?u=michael',
   },

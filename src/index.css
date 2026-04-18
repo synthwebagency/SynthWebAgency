@@ -57,3 +57,50 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-white/20 rounded-full hover:bg-white/30 transition-colors;
 }
+
+/* Hide Spline Logo */
+#spline-logo, .spline-watermark, a[href*="spline.design"] {
+  display: none !important;
+}
+
+/* Google Translate Styling */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  @apply bg-white/10 text-white border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium focus:outline-none focus:ring-1 focus:ring-white/30 transition-all cursor-pointer;
+  margin: 0 !important;
+}
+
+.goog-te-gadget span {
+  display: none !important;
+}
+
+/* Fix for mobile menu consistency */
+#google_translate_element {
+  @apply flex items-center justify-end;
+}
+
+.translate-widget-home {
+  @apply flex items-center justify-center min-w-[120px];
+}
+
+@media (max-width: 640px) {
+  .translate-widget-home {
+    @apply w-full order-last mt-4;
+  }
+}
